@@ -80,6 +80,15 @@ class FilterBar extends React.Component {
   }
 }
 
+class FilterableContactTable extends React.Component {
+  render () {
+    return (
+        <FilterBar />
+        <ContactTable contacts={this.props.contacts}/>
+    );
+  }
+}
+
 //==============================================================================
 
 ReactDOM.render(<App />, document.getElementById('root'));
