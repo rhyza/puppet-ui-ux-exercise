@@ -22,6 +22,37 @@ class ContactRow extends React.Component {
     }
 }
 
+class ContactTable extends React.Component {
+    render() {
+        const rows = [];
+        this.props.contacts.forEach((contact) => {
+            rows.push(
+                <ContactRow contact={contact} key={/* TODO */} />
+            );
+        });
+
+        return (
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th> 
+                        <th>Country</th>
+                        <th>Street</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Zip</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {rows}
+                </tbody>
+            </table>
+        );
+    }
+}
+
 //==============================================================================
 
 ReactDOM.render(<App />, document.getElementById('root'));
