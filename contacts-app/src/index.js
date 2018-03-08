@@ -4,53 +4,53 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 class ContactRow extends React.Component {
-    render() {
-        const contact = this.props.contact;
+  render() {
+    const contact = this.props.contact;
 
-        return (
-            <tr className="contact-row">
-                <td>{contact.firstName}</td>
-                <td>{contact.lastName}</td>
-                <td>{contact.country}</td>
-                <td>{contact.street}</td>
-                <td>{contact.city}</td>
-                <td>{contact.state}</td>
-                <td>{contact.zip}</td>
-                <td>{contact.phone}</td>
-            </tr>
-        );
-    }
+    return (
+      <tr className="contact-row">
+        <td>{contact.firstName}</td>
+        <td>{contact.lastName}</td>
+        <td>{contact.country}</td>
+        <td>{contact.street}</td>
+        <td>{contact.city}</td>
+        <td>{contact.state}</td>
+        <td>{contact.zip}</td>
+        <td>{contact.phone}</td>
+      </tr>
+    );
+  }
 }
 
 class ContactTable extends React.Component {
-    render() {
-        const rows = [];
-        this.props.contacts.forEach((contact) => {
-            rows.push(
-                <ContactRow contact={contact} key={/* TODO */} />
-            );
-        });
+  render() {
+    const rows = [];
+    this.props.contacts.forEach((contact) => {
+      rows.push(
+        <ContactRow contact={contact} key={/* TODO */} />
+      );
+    });
 
-        return (
-            <table>
-                <thead>
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th> 
-                        <th>Country</th>
-                        <th>Street</th>
-                        <th>City</th>
-                        <th>State</th>
-                        <th>Zip</th>
-                        <th>Phone</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {rows}
-                </tbody>
-            </table>
-        );
-    }
+    return (
+      <table>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th> 
+            <th>Country</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows}
+        </tbody>
+      </table>
+    );
+  }
 }
 
 //==============================================================================
