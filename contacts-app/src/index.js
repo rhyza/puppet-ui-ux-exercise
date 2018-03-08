@@ -83,8 +83,20 @@ class FilterBar extends React.Component {
 class FilterableContactTable extends React.Component {
   render () {
     return (
-        <FilterBar />
-        <ContactTable contacts={this.props.contacts}/>
+      <FilterBar />
+      <ContactTable contacts={this.props.contacts}/>
+    );
+  }
+}
+
+class NavBar extends React.Component {
+  render () {
+    return (
+      <nav>
+        <a href="#">Nav Item 1</a>
+        <a href="#">Nav Item 2</a>
+        <a href="#">Nav Item 3</a>
+      </nav>
     );
   }
 }
