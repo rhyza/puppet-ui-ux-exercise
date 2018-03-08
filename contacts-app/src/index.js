@@ -53,6 +53,33 @@ class ContactTable extends React.Component {
   }
 }
 
+class FilterBar extends React.Component {
+  render() {
+    return (
+      <h1 className="table-title">List of Awesome</h1>
+
+      <h3 className="filter-title">Sort by:</h3>
+      <select>
+        <option value="firstName">First Name</option>
+        <option value="lastName">Last Name</option>
+        <option value="country">Country</option>
+        <option value="city">City</option>
+        <option value="state">State</option>
+      </select>
+
+      <h3 className="filter-title">Items per page:</h3>
+      <select>
+        <option value="5">5</option>
+        <option value="10">10</option>
+      </select>
+
+      <h3 className="filter-title">1-10 of 30</h3>
+      <button type="button">prev</button>
+      <button type="button">next</button>
+    );
+  }
+}
+
 //==============================================================================
 
 ReactDOM.render(<App />, document.getElementById('root'));
