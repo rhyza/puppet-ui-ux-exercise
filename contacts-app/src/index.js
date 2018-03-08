@@ -101,6 +101,15 @@ class NavBar extends React.Component {
   }
 }
 
+class App extends React.Component {
+  render () {
+    return (
+      <NavBar />
+      <FilterableContactTable contacts={CONTACTS}/>
+    );
+  }
+}
+
 //==============================================================================
 
 ReactDOM.render(<App />, document.getElementById('root'));
