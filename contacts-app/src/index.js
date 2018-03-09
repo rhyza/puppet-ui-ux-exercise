@@ -107,8 +107,30 @@ class FilterableContactTable extends React.Component {
     this.state = {
       sort: 'lastName',
       numItems: 10,
-      page: 1
+      page: 0
     };
+
+    this.handleSortChange = this.handleSortChange.bind(this);
+    this.handleNumItemChange = this.handleNumItemChange.bind(this);
+    this.handlePageChange = this.handlePageChange.bind(this);
+  }
+
+  handleSortChange(sortFilter) {
+    this.setState({
+      sort: sortFilter
+    });
+  }
+
+  handleNumItemChange(numItems) {
+    this.setState({
+      numItems: numItems
+    });
+  }
+
+  handlePageChange(pageNum) {
+    this.setState({
+      page: pageNum
+    });
   }
 
   render () {
