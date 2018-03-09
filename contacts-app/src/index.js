@@ -28,7 +28,7 @@ function ContactRow(props) {
       <td>{contact.city}</td>
       <td>{contact.state}</td>
       <td>{contact.zip}</td>
-      <td>{contact.phone}</td>
+      <td x-ms-format-detection="none">{contact.phone}</td>
     </tr>
   );
 }
