@@ -1,5 +1,39 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+nav {
+    height: 50px;
+    background-color: #282653;
+    font-size: .75rem;
+    font-weight: 400;
+    color: #95A2AA;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px 50px;
+}
+
+nav li {
+    float: left;
+    line-height: 50px;
+    vertical-align: middle;
+}
+
+nav li a:link, nav li a:visited {
+    display: block;
+    padding: 0px 30px;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+nav li a.active, nav li a:hover, nav li a:active {
+    background-color: #7F56C5;
+    color: white;
 }

@@ -107,9 +107,11 @@ class NavBar extends React.Component {
   render () {
     return (
       <nav>
-        <a href="#">Nav Item 1</a>
-        <a href="#">Nav Item 2</a>
-        <a href="#">Nav Item 3</a>
+        <ul>
+          <li><a href="#" className="active">Nav Item 1</a></li>
+          <li><a href="#">Nav Item 2</a></li>
+          <li><a href="#">Nav Item 3</a></li>
+        </ul>
       </nav>
     );
   }
@@ -129,4 +131,3 @@ class App extends React.Component {
 //==============================================================================
 
 ReactDOM.render(<App />, document.getElementById('root'));
-
