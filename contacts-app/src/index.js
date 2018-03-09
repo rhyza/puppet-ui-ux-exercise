@@ -77,20 +77,30 @@ class ContactTable extends React.Component {
         <thead>
           <tr>
             <th className="firstName">
-              <button>First Name</button>
+              <button value="firstName" onClick={this.handleSortChange}>
+                First Name
+              </button>
             </th>
             <th className="lastName">
-              <button>Last Name</button>
+              <button value="lastName" onClick={this.handleSortChange}>
+                Last Name
+              </button>
             </th> 
             <th className="country">
-              <button>Country</button>
+              <button value="country" onClick={this.handleSortChange}>
+                Country
+              </button>
             </th>
             <th className="street">Address</th>
             <th className="city">
-              <button>City</button>
+              <button value="city" onClick={this.handleSortChange}>
+                City
+              </button>
             </th>
             <th className="state">
-              <button>State</button>
+              <button value="state" onClick={this.handleSortChange}>
+                State
+              </button>
             </th>
             <th className="zip">Zip</th>
             <th className="phone">Phone</th>
