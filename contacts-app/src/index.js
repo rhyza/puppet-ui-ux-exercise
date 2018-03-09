@@ -56,7 +56,7 @@ class ContactTable extends React.Component {
 
     var sortedContacts = this.sortBy(contacts, this.props.sort);
     if (!this.props.asc) {
-        sortedContacts = sortedContacts.reverse();
+      sortedContacts = sortedContacts.reverse();
     }
     const viewContacts = sortedContacts.slice(contactStart, contactEnd);
     const rows = viewContacts.map((contact) =>
@@ -97,9 +97,7 @@ class ContactTable extends React.Component {
             <th className="phone">Phone</th>
           </tr>
         </thead>
-        <tbody>
-          {rows}
-        </tbody>
+        <tbody>{rows}</tbody>
       </table>
     );
   }
