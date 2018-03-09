@@ -72,6 +72,18 @@ class FilterBar extends React.Component {
     this.handlePageChange = this.handlePageChange.bind(this);
   }
 
+  handleSortChange(event) {
+    this.props.onSortChange(event.target.value);
+  }
+
+  handleNumItemChange(event) {
+    this.props.onSortChange(event.target.value);
+  }
+
+  handlePageChange(event) {
+    this.props.onSortChange(event.target.value);
+  }
+
   render() {
     return (
       <header className="filter-bar">
