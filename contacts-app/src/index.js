@@ -35,12 +35,25 @@ class ContactRow extends React.Component {
 }
 
 class ContactTable extends React.Component {
-  sortBy(contacts, property) {
-    return contacts;
+  sortBy(contacts, field) {
+    var sortedContacts = contacts.slice();
+    sortedContacts.sort((a, b) => {
+      var fieldA = a[field].toLowerCase();
+      var fieldB = b[field].toLowerCase();
+
+      if (fieldA < fieldB) {
+        return -1;
+      } else if (fieldA > fieldB) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+    return sortedContacts;
   }
 
   render() {
-    const sortBy = this.props.sort;
+    const numContacts = parseInt(this.props.numContacts, 10);
     const multiplierBase = this.props.page * this.props.numItems;
     const contactStart =  parseInt(multiplierBase, 10);
     const contactEnd = parseInt(
