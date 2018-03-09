@@ -252,13 +252,33 @@ class FilterableContactTable extends React.Component {
 }
 
 class NavBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      active: "1"
+    };
+
+    this.handleNavChange = this.handleNavChange.bind(this);
+  }
+
+  handleNavChange(navItem) {
+    this.setState({
+      active: navItem
+    });
+  }
+
   render () {
+    const activeItem = this.state.active;
+
     return (
       <nav>
         <ul>
-          <li><a href="#" className="active">Nav Item 1</a></li>
-          <li><a href="#">Nav Item 2</a></li>
-          <li><a href="#">Nav Item 3</a></li>
+          <li><a href="#" className={activeItem === "1" ? "active" : null} 
+            onClick={(e) => this.handleNavChange("1", e)}>Nav Item 1</a></li>
+          <li><a href="#" className={activeItem === "2" ? "active" : null}
+            onClick={(e) => this.handleNavChange("2", e)}>Nav Item 2</a></li>
+          <li><a href="#" className={activeItem === "3" ? "active" : null}
+            onClick={(e) => this.handleNavChange("3", e)}>Nav Item 3</a></li>
         </ul>
       </nav>
     );
