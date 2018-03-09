@@ -34,6 +34,12 @@ function ContactRow(props) {
 }
 
 class ContactTable extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleSortChange = this.handleSortChange.bind(this);
+  }
+
   sortBy(contacts, field) {
     var sortedContacts = contacts.slice();
     sortedContacts.sort((a, b) => {
@@ -51,6 +57,10 @@ class ContactTable extends React.Component {
     return sortedContacts;
   }
 
+  handleSortChange(event) {
+    this.props.onSortChange(event.target.value);
+  }
+
   render() {
     const numContacts = this.props.contacts.length;
     const contactStart =  this.props.page * this.props.numItems;
@@ -66,12 +76,22 @@ class ContactTable extends React.Component {
       <table>
         <thead>
           <tr>
-            <th className="firstName">First Name</th>
-            <th className="lastName">Last Name</th> 
-            <th className="country">Country</th>
+            <th className="firstName">
+              <button>First Name</button>
+            </th>
+            <th className="lastName">
+              <button>Last Name</button>
+            </th> 
+            <th className="country">
+              <button>Country</button>
+            </th>
             <th className="street">Address</th>
-            <th className="city">City</th>
-            <th className="state">State</th>
+            <th className="city">
+              <button>City</button>
+            </th>
+            <th className="state">
+              <button>State</button>
+            </th>
             <th className="zip">Zip</th>
             <th className="phone">Phone</th>
           </tr>
@@ -217,6 +237,8 @@ class FilterableContactTable extends React.Component {
           sort={this.state.sort}
           numItems={this.state.numItems}
           page={this.state.page}
+
+          onSortChange={this.handleSortChange}
         />
       </main>
     );

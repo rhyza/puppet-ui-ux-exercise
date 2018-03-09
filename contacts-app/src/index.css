@@ -125,6 +125,15 @@ thead tr {
     color: #282653; /* spec text says #95A2AA but spec visuals show #282653*/
 }
 
+thead button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+
 tbody tr {
     height: 32px;
     font-size: .75rem;
