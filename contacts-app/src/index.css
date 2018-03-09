@@ -64,17 +64,39 @@ nav li a.active, nav li a:hover, nav li a:active {
     font-size: .75rem;
     font-weight: 600;
     color: #1DAFE9;
+    border: none;
+    margin-right: 10px;
 }
 
 .pagination {
     font-size: 0.875rem;
-    font-weight: 700; /* 'of' should be 400*/
+    font-weight: 400;
     color: #7F56C5;
 }
 
+.pagination strong {
+    font-weight: 700;
+}
+
 .nav-arrow {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 400;
     color: #1DAFE9;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+section.left-align {
+    float: left;
+    line-height: 1.3rem;
+    margin: 40px 0 5px 50px;
+}
+
+section.right-align {
+    float: right;
+    line-height: 1.3rem;
+    margin: 40px 50px 5px 0;
 }
 
 table {

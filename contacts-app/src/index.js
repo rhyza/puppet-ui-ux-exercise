@@ -66,29 +66,37 @@ class ContactTable extends React.Component {
 class FilterBar extends React.Component {
   render() {
     return (
-      <div className="filter-bar">
-        <span className="table-title">List of Awesome</span>
-        <span className="pipe-divider">|</span>
+      <header className="filter-bar">
+        <section className="left-align">
+          <span className="table-title">List of Awesome</span>
+          <span className="pipe-divider"> | </span>
 
-        <span className="filter-title">Sort by:</span>
-        <select className="filter-options">
-          <option value="firstName">First Name</option>
-          <option value="lastName">Last Name</option>
-          <option value="country">Country</option>
-          <option value="city">City</option>
-          <option value="state">State</option>
-        </select>
+          <span className="filter-title">Sort by:</span>
+          <select className="filter-options">
+            <option value="firstName">First Name</option>
+            <option value="lastName">Last Name</option>
+            <option value="country">Country</option>
+            <option value="city">City</option>
+            <option value="state">State</option>
+          </select>
+        </section>
 
-        <span className="filter-title">Items per page:</span>
-        <select className="filter-options">
-          <option value="5">5</option>
-          <option value="10">10</option>
-        </select>
+        <section className="right-align">
+          <span className="filter-title">Items per page:</span>
+          <select className="filter-options">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="75">75</option>
+            <option value="100">100</option>
+          </select>
 
-        <span className="pagination">1-10 of 30</span>
-        <button className="nav-arrow" type="button">&lt;</button>
-        <button className="nav-arrow" type="button">&gt;</button>
-      </div>
+          <span className="pagination"><strong>1-10</strong> of <strong>30</strong></span>
+          <button className="nav-arrow" type="button">&lt;</button>
+          <button className="nav-arrow" type="button">&gt;</button>
+        </section>
+      </header>
     );
   }
 }
