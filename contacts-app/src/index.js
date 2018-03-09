@@ -1,20 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-
-const CONTACTS = [
-  {firstName:"Zachary",lastName:"Borgetti",country:"USA",street:"2234 3rd Ave Site 3",city:"Seattle",state:"WA",zip:"98101",phone:"206-778-5741"},
-  {firstName:"Zach",lastName:"Borgetti",country:"USA",street:"2234 3rd Ave Site 3",city:"Seattle",state:"WA",zip:"98101",phone:"206-778-5742"},
-  {firstName:"Landon",lastName:"Donovan",country:"USA",street:"1800 S Avalon Blvd",city:"Carson",state:"CA",zip:"90746",phone:"310-630-2200"},
-  {firstName:"Samuel L.",lastName:"Jackson",country:"USA",street:"2226 2nd Ave",city:"Seattle",state:"WA",zip:"98121",phone:"206-441-5660"},
-  {firstName:"Micheal",lastName:"Jordan",country:"USA",street:"1901 West Madison Street",city:"Chicago",state:"IL",zip:"60612",phone:"312-455-4000"},
-  {firstName:"Aaron",lastName:"Meautiful",country:"Mexico",street:"3465 Calzada de Tlalpan",city:"Coyoacan",state:"CDMX",zip:"04650",phone:"+52-55-5487-3100"},
-  {firstName:"Micheal",lastName:"Myers",country:"USA",street:"590 Galer St",city:"Austin",state:"TX",zip:"79935",phone:"915-857-1770"},
-  {firstName:"Maite",lastName:"Perroni",country:"Mexico",street:"2101 Av. Juarez",city:"Mexico City",state:"CDMX",zip:"06050",phone:"+52 55 5365 1250"},
-  {firstName:"Joel",lastName:"Schaper",country:"USA",street:"1823 Terry Ave, Suite 319",city:"Seattle",state:"WA",zip:"98121",phone:"206-258-4687"},
-  {firstName:"Brian",lastName:"Stallone",country:"USA",street:"4567 Lake Washington Blvd NE, Suite 6709",city:"Kirkland",state:"OR",zip:"98132",phone:"425-333-4567"},
-  {firstName:"Rahul",lastName:"Veloved",country:"England",street:"118 Piccadilly",city:"Mayfair",state:"London",zip:"W1J7NW",phone:"+44 (0)20-7042-7118"}
-];
+import data from './data.json';
 
 function ContactRow(props) {
   const contact = props.contact;
@@ -227,7 +214,7 @@ class FilterableContactTable extends React.Component {
 
   handlePageChange(page) {
     const pageNum = parseInt(page);
-    const numPages = Math.ceil(CONTACTS.length / this.state.numItems);
+    const numPages = Math.ceil(data.length / this.state.numItems);
 
     if (pageNum < 0 || pageNum >= numPages) {
       return;
@@ -241,7 +228,7 @@ class FilterableContactTable extends React.Component {
     return (
       <main>
         <FilterBar
-          numContacts={CONTACTS.length}
+          numContacts={data.length}
 
           sort={this.state.sort}
           numItems={this.state.numItems}
@@ -252,7 +239,7 @@ class FilterableContactTable extends React.Component {
           onPageChange={this.handlePageChange}
         />
         <ContactTable
-          contacts={CONTACTS}
+          contacts={data}
 
           sort={this.state.sort}
           asc={this.state.asc}
