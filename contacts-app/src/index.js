@@ -102,6 +102,15 @@ class FilterBar extends React.Component {
 }
 
 class FilterableContactTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sort: 'lastName',
+      numItems: 10,
+      page: 1
+    };
+  }
+
   render () {
     return (
       <main>
