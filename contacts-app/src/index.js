@@ -48,7 +48,7 @@ class ContactTable extends React.Component {
             <th>First Name</th>
             <th>Last Name</th> 
             <th>Country</th>
-            <th>Street</th>
+            <th>Address</th>
             <th>City</th>
             <th>State</th>
             <th>Zip</th>
@@ -82,7 +82,7 @@ class FilterBar extends React.Component {
         </section>
 
         <section className="right-align">
-          <span className="filter-title">Items per page:</span>
+          <span className="filter-title">items per page:</span>
           <select className="filter-options">
             <option value="5">5</option>
             <option value="10">10</option>
