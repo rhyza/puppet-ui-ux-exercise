@@ -85,6 +85,12 @@ class FilterBar extends React.Component {
   }
 
   render() {
+    const numContacts = parseInt(this.props.numContacts, 10);
+    const multiplierBase = this.props.page * this.props.numItems;
+    const contactStart =  parseInt(multiplierBase + 1, 10);
+    const contactEnd = parseInt(
+        Math.min(multiplierBase + this.props.numItems, numContacts), 10);
+
     return (
       <header className="filter-bar">
         <section className="left-align">
@@ -112,7 +118,9 @@ class FilterBar extends React.Component {
             <option value="100">100</option>
           </select>
 
-          <span className="pagination"><strong>1-10</strong> of <strong>30</strong></span>
+          <span className="pagination">
+            <strong>{contactStart}-{contactEnd}</strong> of <strong>{numContacts}</strong>
+          </span>
           <button className="nav-arrow" type="button">&lt;</button>
           <button className="nav-arrow" type="button">&gt;</button>
         </section>
@@ -162,6 +170,7 @@ class FilterableContactTable extends React.Component {
     return (
       <main>
         <FilterBar
+          numContacts={CONTACTS.length}
           sort={this.state.sort}
           numItems={this.state.numItems}
           page={this.state.page}
