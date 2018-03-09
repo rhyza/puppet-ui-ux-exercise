@@ -119,10 +119,15 @@ class FilterBar extends React.Component {
           </select>
 
           <span className="pagination">
-            <strong>{contactStart}-{contactEnd}</strong> of <strong>{numContacts}</strong>
+            <strong>{contactStart}-{contactEnd}
+            </strong> of <strong>{numContacts}</strong>
           </span>
-          <button className="nav-arrow" type="button" value={this.props.page - 1} onClick={this.handlePageChange}>&lt;</button>
-          <button className="nav-arrow" type="button" value={this.props.page + 1} onClick={this.handlePageChange}>&gt;</button>
+          <button className="nav-arrow" type="button"
+            value={this.props.page - 1} onClick={this.handlePageChange}>&lt;
+          </button>
+          <button className="nav-arrow" type="button"
+            value={this.props.page + 1} onClick={this.handlePageChange}>&gt;
+          </button>
         </section>
       </header>
     );
