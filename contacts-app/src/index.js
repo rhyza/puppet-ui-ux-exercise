@@ -62,15 +62,16 @@ class ContactTable extends React.Component {
   }
 
   render() {
-    const numContacts = this.props.contacts.length;
-    const contactStart =  this.props.page * this.props.numItems;
-    const contactEnd = Math.min(contactStart + this.props.numItems, numContacts);
+    const contacts = this.props.contacts;
+    const numItems = this.props.numItems;
+    const contactStart =  this.props.page * numItems;
+    const contactEnd = Math.min(contactStart + numItems, contacts.length);
 
-    var contacts = this.sortBy(this.props.contacts, this.props.sort);
+    var sortedContacts = this.sortBy(contacts, this.props.sort);
     if (!this.props.asc) {
-        contacts = contacts.reverse();
+        sortedContacts = sortedContacts.reverse();
     }
-    const viewContacts = contacts.slice(contactStart, contactEnd);
+    const viewContacts = sortedContacts.slice(contactStart, contactEnd);
     const rows = viewContacts.map((contact) =>
       <ContactRow contact={contact} key={contact.name + contact.phone} />
     );
@@ -154,7 +155,8 @@ class FilterBar extends React.Component {
           <span className="pipe-divider"> | </span>
 
           <span className="filter-title">Sort by:</span>
-          <select className="filter-options" value={this.props.sort} onChange={this.handleSortChange}>
+          <select className="filter-options"
+          value={this.props.sort} onChange={this.handleSortChange}>
             <option value="firstName">First Name</option>
             <option value="lastName">Last Name</option>
             <option value="country">Country</option>
@@ -165,7 +167,8 @@ class FilterBar extends React.Component {
 
         <section className="right-align">
           <span className="filter-title">items per page:</span>
-          <select className="filter-options" value={numItems} onChange={this.handleNumItemChange}>
+          <select className="filter-options"
+          value={numItems} onChange={this.handleNumItemChange}>
             <option value="5">5</option>
             <option value="10">10</option>
             <option value="25">25</option>
