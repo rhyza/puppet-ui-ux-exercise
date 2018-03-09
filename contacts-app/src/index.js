@@ -154,7 +154,7 @@ class FilterBar extends React.Component {
           <span className="table-title">List of Awesome</span>
           <span className="pipe-divider"> | </span>
 
-          <span className="filter-title">Sort by:</span>
+          <span className="filter-label">Sort by:</span>
           <select className="filter-options"
           value={this.props.sort} onChange={this.handleSortChange}>
             <option value="firstName">First Name</option>
@@ -166,7 +166,7 @@ class FilterBar extends React.Component {
         </section>
 
         <section className="right-align">
-          <span className="filter-title">items per page:</span>
+          <span className="filter-label">items per page:</span>
           <select className="filter-options"
           value={numItems} onChange={this.handleNumItemChange}>
             <option value="5">5</option>

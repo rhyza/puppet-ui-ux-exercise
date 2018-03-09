@@ -29,7 +29,6 @@ nav li {
 nav li a:link, nav li a:visited {
     display: block;
     padding: 0 30px;
-    vertical-align: middle;
     text-align: center;
     text-decoration: none;
     color: inherit;
@@ -54,7 +53,7 @@ nav li a.active, nav li a:hover, nav li a:active {
     color: #BCBEC0;
 }
 
-.filter-title {
+.filter-label {
     font-size: .75rem;
     font-weight: 400;
     color: #7F56C5;
