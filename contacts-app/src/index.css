@@ -4,6 +4,8 @@ body {
     font-family: sans-serif;
 }
 
+/*** NavBar ***/
+
 nav {
     height: 50px;
     background-color: #282653;
@@ -37,6 +39,8 @@ nav li a.active, nav li a:hover, nav li a:active {
     background-color: #7F56C5;
     color: white;
 }
+
+/*** FilterBar ***/
 
 .filter-bar {
     display: inline;
@@ -98,6 +102,8 @@ section.right-align {
     line-height: 1.3rem;
     margin: 40px 50px 5px 0;
 }
+
+/*** ContactTable ***/
 
 table {
     border-collapse: collapse;

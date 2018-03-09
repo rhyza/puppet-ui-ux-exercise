@@ -104,10 +104,10 @@ class FilterBar extends React.Component {
 class FilterableContactTable extends React.Component {
   render () {
     return (
-      <div>
+      <main>
         <FilterBar />
         <ContactTable contacts={CONTACTS}/>
-      </div>
+      </main>
     );
   }
 }
