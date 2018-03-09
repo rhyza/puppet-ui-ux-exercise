@@ -136,8 +136,20 @@ class FilterableContactTable extends React.Component {
   render () {
     return (
       <main>
-        <FilterBar />
-        <ContactTable contacts={CONTACTS}/>
+        <FilterBar
+          sort={this.state.sort}
+          numItems={this.state.numItems}
+          page={this.state.page}
+          onSortChange={this.handleSortChange}
+          onNumItemChange={this.handleNumItemChange}
+          onPageChange={this.handlePageChange}
+        />
+        <ContactTable
+          contacts={CONTACTS}
+          sort={this.state.sort}
+          numItems={this.state.numItems}
+          page={this.state.page}
+        />
       </main>
     );
   }
