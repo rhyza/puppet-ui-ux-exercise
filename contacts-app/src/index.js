@@ -151,7 +151,7 @@ class FilterBar extends React.Component {
           <span className="pipe-divider"> | </span>
 
           <span className="filter-title">Sort by:</span>
-          <select className="filter-options" onChange={this.handleSortChange}>
+          <select className="filter-options" value={this.props.sort} onChange={this.handleSortChange}>
             <option value="firstName">First Name</option>
             <option value="lastName">Last Name</option>
             <option value="country">Country</option>
@@ -162,7 +162,7 @@ class FilterBar extends React.Component {
 
         <section className="right-align">
           <span className="filter-title">items per page:</span>
-          <select className="filter-options" onChange={this.handleNumItemChange}>
+          <select className="filter-options" value={numItems} onChange={this.handleNumItemChange}>
             <option value="5">5</option>
             <option value="10">10</option>
             <option value="25">25</option>
@@ -191,8 +191,8 @@ class FilterableContactTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sort: 'firstName',
-      numItems: 5,
+      sort: 'lastName',
+      numItems: 10,
       page: 0
     };
 
