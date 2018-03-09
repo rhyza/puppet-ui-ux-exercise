@@ -38,6 +38,45 @@ nav li a.active, nav li a:hover, nav li a:active {
     color: white;
 }
 
+.filter-bar {
+    display: inline;
+}
+
+.table-title {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #7F56C5;
+}
+
+.pipe-divider {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #BCBEC0;
+}
+
+.filter-title {
+    font-size: .75rem;
+    font-weight: 400;
+    color: #7F56C5;
+}
+
+.filter-options {
+    font-size: .75rem;
+    font-weight: 600;
+    color: #1DAFE9;
+}
+
+.pagination {
+    font-size: 0.875rem;
+    font-weight: 700; /* 'of' should be 400*/
+    color: #7F56C5;
+}
+
+.nav-arrow {
+    font-size: 1.5rem;
+    color: #1DAFE9;
+}
+
 table {
     border-collapse: collapse;
     margin: 50px;

@@ -66,11 +66,12 @@ class ContactTable extends React.Component {
 class FilterBar extends React.Component {
   render() {
     return (
-      <div>
-        <h1 className="table-title">List of Awesome</h1>
+      <div className="filter-bar">
+        <span className="table-title">List of Awesome</span>
+        <span className="pipe-divider">|</span>
 
-        <h3 className="filter-title">Sort by:</h3>
-        <select>
+        <span className="filter-title">Sort by:</span>
+        <select className="filter-options">
           <option value="firstName">First Name</option>
           <option value="lastName">Last Name</option>
           <option value="country">Country</option>
@@ -78,15 +79,15 @@ class FilterBar extends React.Component {
           <option value="state">State</option>
         </select>
 
-        <h3 className="filter-title">Items per page:</h3>
-        <select>
+        <span className="filter-title">Items per page:</span>
+        <select className="filter-options">
           <option value="5">5</option>
           <option value="10">10</option>
         </select>
 
-        <h3 className="filter-title">1-10 of 30</h3>
-        <button type="button">prev</button>
-        <button type="button">next</button>
+        <span className="pagination">1-10 of 30</span>
+        <button className="nav-arrow" type="button">&lt;</button>
+        <button className="nav-arrow" type="button">&gt;</button>
       </div>
     );
   }
