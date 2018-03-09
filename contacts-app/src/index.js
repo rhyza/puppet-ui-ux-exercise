@@ -127,9 +127,9 @@ class FilterBar extends React.Component {
   }
 
   render() {
-    const numContacts = parseInt(this.props.numContacts);
-    const numItems = parseInt(this.props.numItems);
-    const page = parseInt(this.props.page);
+    const numContacts = parseInt(this.props.numContacts, 10);
+    const numItems = parseInt(this.props.numItems, 10);
+    const page = parseInt(this.props.page, 10);
 
     const multiplierBase = page * numItems;
     const contactStart =  multiplierBase + 1;
@@ -196,7 +196,7 @@ class FilterableContactTable extends React.Component {
   }
 
   handleSortChange(sortFilter) {
-    var order = (this.state.sort == sortFilter) ? !this.state.asc : true;
+    var order = (this.state.sort === sortFilter) ? !this.state.asc : true;
 
     this.setState({
       sort: sortFilter,
@@ -207,13 +207,13 @@ class FilterableContactTable extends React.Component {
 
   handleNumItemChange(numItems) {
     this.setState({
-      numItems: parseInt(numItems),
+      numItems: parseInt(numItems, 10),
       page: 0
     });
   }
 
   handlePageChange(page) {
-    const pageNum = parseInt(page);
+    const pageNum = parseInt(page, 10);
     const numPages = Math.ceil(data.length / this.state.numItems);
 
     if (pageNum < 0 || pageNum >= numPages) {
