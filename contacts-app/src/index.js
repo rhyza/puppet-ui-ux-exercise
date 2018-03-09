@@ -66,14 +66,14 @@ class ContactTable extends React.Component {
       <table>
         <thead>
           <tr>
-            <th>First Name</th>
-            <th>Last Name</th> 
-            <th>Country</th>
-            <th>Address</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Zip</th>
-            <th>Phone</th>
+            <th className="firstName">First Name</th>
+            <th className="lastName">Last Name</th> 
+            <th className="country">Country</th>
+            <th className="street">Address</th>
+            <th className="city">City</th>
+            <th className="state">State</th>
+            <th className="zip">Zip</th>
+            <th className="phone">Phone</th>
           </tr>
         </thead>
         <tbody>
