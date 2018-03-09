@@ -4,7 +4,7 @@ import './index.css';
 
 const CONTACTS = [
   {firstName:"Zachary",lastName:"Borgetti",country:"USA",street:"2234 3rd Ave Site 3",city:"Seattle",state:"WA",zip:"98101",phone:"206-778-5741"},
-  {firstName:"Zach",lastName:"Borgetti",country:"USA",street:"2234 3rd Ave Site 3",city:"Seattle",state:"WA",zip:"98101",phone:"206-778-5741"},
+  {firstName:"Zach",lastName:"Borgetti",country:"USA",street:"2234 3rd Ave Site 3",city:"Seattle",state:"WA",zip:"98101",phone:"206-778-5742"},
   {firstName:"Landon",lastName:"Donovan",country:"USA",street:"1800 S Avalon Blvd",city:"Carson",state:"CA",zip:"90746",phone:"310-630-2200"},
   {firstName:"Samuel L.",lastName:"Jackson",country:"USA",street:"2226 2nd Ave",city:"Seattle",state:"WA",zip:"98121",phone:"206-441-5660"},
   {firstName:"Micheal",lastName:"Jordan",country:"USA",street:"1901 West Madison Street",city:"Chicago",state:"IL",zip:"60612",phone:"312-455-4000"},
@@ -112,7 +112,8 @@ class FilterBar extends React.Component {
     const multiplierBase = this.props.page * this.props.numItems;
     const contactStart =  parseInt(multiplierBase + 1, 10);
     const contactEnd = parseInt(
-        Math.min(multiplierBase + this.props.numItems, numContacts), 10);
+        Math.min(multiplierBase + this.props.numItems, this.props.numContacts),
+        10);
 
     return (
       <header className="filter-bar">
@@ -173,18 +174,21 @@ class FilterableContactTable extends React.Component {
 
   handleSortChange(sortFilter) {
     this.setState({
-      sort: sortFilter
+      sort: sortFilter,
+      page: 0
     });
   }
 
   handleNumItemChange(numItems) {
     this.setState({
-      numItems: numItems
+      numItems: numItems,
+      page: 0
     });
   }
 
-  handlePageChange(pageNum) {
-    const numPages = Math.ceil(CONTACTS.length / this.state.numItems)
+  handlePageChange(page) {
+    const pageNum = parseInt(page);
+    const numPages = Math.ceil(CONTACTS.length / this.state.numItems);
 
     if (pageNum < 0 || pageNum >= numPages) {
       return;
