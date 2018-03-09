@@ -16,23 +16,21 @@ const CONTACTS = [
   {firstName:"Rahul",lastName:"Veloved",country:"England",street:"118 Piccadilly",city:"Mayfair",state:"London",zip:"W1J7NW",phone:"+44 (0)20-7042-7118"}
 ];
 
-class ContactRow extends React.Component {
-  render() {
-    const contact = this.props.contact;
+function ContactRow(props) {
+  const contact = props.contact;
 
-    return (
-      <tr className="contact-row">
-        <td>{contact.firstName}</td>
-        <td>{contact.lastName}</td>
-        <td>{contact.country}</td>
-        <td>{contact.street}</td>
-        <td>{contact.city}</td>
-        <td>{contact.state}</td>
-        <td>{contact.zip}</td>
-        <td>{contact.phone}</td>
-      </tr>
-    );
-  }
+  return (
+    <tr className="contact-row">
+      <td>{contact.firstName}</td>
+      <td>{contact.lastName}</td>
+      <td>{contact.country}</td>
+      <td>{contact.street}</td>
+      <td>{contact.city}</td>
+      <td>{contact.state}</td>
+      <td>{contact.zip}</td>
+      <td>{contact.phone}</td>
+    </tr>
+  );
 }
 
 class ContactTable extends React.Component {
@@ -59,8 +57,8 @@ class ContactTable extends React.Component {
     const contactEnd = Math.min(contactStart + this.props.numItems, numContacts);
 
     const contacts = this.sortBy(this.props.contacts, this.props.sort);
-    const currentContacts = contacts.slice(contactStart, contactEnd);
-    const rows = currentContacts.map((contact) =>
+    const viewContacts = contacts.slice(contactStart, contactEnd);
+    const rows = viewContacts.map((contact) =>
       <ContactRow contact={contact} key={contact.phone} />
     );
 
@@ -108,12 +106,13 @@ class FilterBar extends React.Component {
   }
 
   render() {
-    const numContacts = parseInt(this.props.numContacts, 10);
-    const multiplierBase = this.props.page * this.props.numItems;
-    const contactStart =  parseInt(multiplierBase + 1, 10);
-    const contactEnd = parseInt(
-        Math.min(multiplierBase + this.props.numItems, this.props.numContacts),
-        10);
+    const numContacts = parseInt(this.props.numContacts);
+    const numItems = parseInt(this.props.numItems);
+    const page = parseInt(this.props.page);
+
+    const multiplierBase = page * numItems;
+    const contactStart =  multiplierBase + 1;
+    const contactEnd = Math.min(multiplierBase + numItems, numContacts);
 
     return (
       <header className="filter-bar">
@@ -147,10 +146,10 @@ class FilterBar extends React.Component {
             </strong> of <strong>{numContacts}</strong>
           </span>
           <button className="nav-arrow" type="button"
-            value={this.props.page - 1} onClick={this.handlePageChange}>&lt;
+            value={page - 1} onClick={this.handlePageChange}>&lt;
           </button>
           <button className="nav-arrow" type="button"
-            value={this.props.page + 1} onClick={this.handlePageChange}>&gt;
+            value={page + 1} onClick={this.handlePageChange}>&gt;
           </button>
         </section>
       </header>
@@ -181,7 +180,7 @@ class FilterableContactTable extends React.Component {
 
   handleNumItemChange(numItems) {
     this.setState({
-      numItems: numItems,
+      numItems: parseInt(numItems),
       page: 0
     });
   }
@@ -203,15 +202,18 @@ class FilterableContactTable extends React.Component {
       <main>
         <FilterBar
           numContacts={CONTACTS.length}
+
           sort={this.state.sort}
           numItems={this.state.numItems}
           page={this.state.page}
+
           onSortChange={this.handleSortChange}
           onNumItemChange={this.handleNumItemChange}
           onPageChange={this.handlePageChange}
         />
         <ContactTable
           contacts={CONTACTS}
+
           sort={this.state.sort}
           numItems={this.state.numItems}
           page={this.state.page}
