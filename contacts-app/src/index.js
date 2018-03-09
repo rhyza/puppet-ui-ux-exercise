@@ -64,6 +64,14 @@ class ContactTable extends React.Component {
 }
 
 class FilterBar extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleSortChange = this.handleSortChange.bind(this);
+    this.handleNumItemChange = this.handleNumItemChange.bind(this);
+    this.handlePageChange = this.handlePageChange.bind(this);
+  }
+
   render() {
     return (
       <header className="filter-bar">
