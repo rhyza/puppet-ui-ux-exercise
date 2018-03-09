@@ -39,9 +39,12 @@ nav li a.active, nav li a:hover, nav li a:active {
 }
 
 table {
+    border-collapse: collapse;
     margin: 50px;
     width: calc(100% - 100px);
-    border-collapse: collapse;
+    width: -moz-calc(100% - 100px);
+    width: -webkit-calc(100% - 100px);
+    width: -o-calc(100% - 100px);
 }
 
 table th, table td {
