@@ -125,8 +125,8 @@ class FilterableContactTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sort: 'lastName',
-      numItems: 10,
+      sort: 'firstName',
+      numItems: 5,
       page: 0
     };
 
@@ -148,6 +148,11 @@ class FilterableContactTable extends React.Component {
   }
 
   handlePageChange(pageNum) {
+    const numPages = Math.ceil(CONTACTS.length / this.state.numItems)
+
+    if (pageNum < 0 || pageNum >= numPages) {
+      return;
+    }
     this.setState({
       page: pageNum
     });
