@@ -42,10 +42,6 @@ nav li a.active, nav li a:hover, nav li a:active {
 
 /*** FilterBar ***/
 
-.filter-bar {
-    display: inline;
-}
-
 .table-title {
     font-size: 1rem;
     font-weight: 400;

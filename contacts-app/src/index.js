@@ -59,7 +59,7 @@ class ContactTable extends React.Component {
     const contacts = this.sortBy(this.props.contacts, this.props.sort);
     const viewContacts = contacts.slice(contactStart, contactEnd);
     const rows = viewContacts.map((contact) =>
-      <ContactRow contact={contact} key={contact.phone} />
+      <ContactRow contact={contact} key={contact.name + contact.phone} />
     );
 
     return (
@@ -115,7 +115,7 @@ class FilterBar extends React.Component {
     const contactEnd = Math.min(multiplierBase + numItems, numContacts);
 
     return (
-      <header className="filter-bar">
+      <header>
         <section className="left-align">
           <span className="table-title">List of Awesome</span>
           <span className="pipe-divider"> | </span>
