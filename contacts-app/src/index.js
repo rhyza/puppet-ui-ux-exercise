@@ -66,7 +66,10 @@ class ContactTable extends React.Component {
     const contactStart =  this.props.page * this.props.numItems;
     const contactEnd = Math.min(contactStart + this.props.numItems, numContacts);
 
-    const contacts = this.sortBy(this.props.contacts, this.props.sort);
+    var contacts = this.sortBy(this.props.contacts, this.props.sort);
+    if (!this.props.asc) {
+        contacts = contacts.reverse();
+    }
     const viewContacts = contacts.slice(contactStart, contactEnd);
     const rows = viewContacts.map((contact) =>
       <ContactRow contact={contact} key={contact.name + contact.phone} />
@@ -192,6 +195,7 @@ class FilterableContactTable extends React.Component {
     super(props);
     this.state = {
       sort: 'lastName',
+      asc: true,
       numItems: 10,
       page: 0
     };
@@ -202,8 +206,11 @@ class FilterableContactTable extends React.Component {
   }
 
   handleSortChange(sortFilter) {
+    var order = (this.state.sort == sortFilter) ? !this.state.asc : true;
+
     this.setState({
       sort: sortFilter,
+      asc: order,
       page: 0
     });
   }
@@ -245,6 +252,7 @@ class FilterableContactTable extends React.Component {
           contacts={CONTACTS}
 
           sort={this.state.sort}
+          asc={this.state.asc}
           numItems={this.state.numItems}
           page={this.state.page}
 
