@@ -60,7 +60,7 @@ class ContactTable extends React.Component {
     }
     const viewContacts = sortedContacts.slice(contactStart, contactEnd);
     const rows = viewContacts.map((contact) =>
-      <ContactRow contact={contact} key={contact.name + contact.phone} />
+      <ContactRow contact={contact} key={contact.firstName + contact.phone} />
     );
 
     return (
