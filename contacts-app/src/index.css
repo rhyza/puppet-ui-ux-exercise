@@ -121,7 +121,7 @@ thead tr {
     font-size: .75rem;
     font-weight: 700;
     text-align: left;
-    color: #282653; /* spec text says #95A2AA but spec visuals show #282653*/
+    color: #95A2AA; /* spec text says #95A2AA but spec visuals show #282653*/
 }
 
 thead button {
