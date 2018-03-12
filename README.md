@@ -1,6 +1,6 @@
 # UI/UX Exercise for Puppet
 
-Coding assignment found [here](https://github.com/Distelli/ui-ux-exercise1).
+Coding assignment instructions found [here](https://github.com/Distelli/ui-ux-exercise1).
 
 ## Notes
 * In UI_UX_Specs.pdf, the text dictates the font color for the table header ("LIST HEADER") should be #95A2AA. However, the color shown in the mock-up is actually #282653. Used font color dictated in spec sheet.
