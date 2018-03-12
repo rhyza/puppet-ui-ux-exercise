@@ -163,7 +163,7 @@ class FilterBar extends React.Component {
           </select>
 
           <span className="pagination">
-            <strong>{contactStart}-{contactEnd}
+            <strong>{numContacts ? contactStart : 0}-{contactEnd}
             </strong> of <strong>{numContacts}</strong>
           </span>
           <button className="nav-arrow" type="button"
