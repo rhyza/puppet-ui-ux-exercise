@@ -89,14 +89,16 @@ nav li a.active, nav li a:hover, nav li a:active {
 
 section.left-align {
     float: left;
-    line-height: 1.3rem;
-    margin: 40px 0 5px 50px;
+    line-height: 1.7rem;
+    margin-top: 40px;
+    margin-left: 50px;
 }
 
 section.right-align {
     float: right;
     line-height: 1.3rem;
-    margin: 40px 50px 5px 0;
+    margin-top: 40px;
+    margin-right: 50px;
 }
 
 /*** ContactTable ***/
@@ -185,11 +187,11 @@ tbody tr:nth-child(odd) {
     }
 
     section.left-align {
-        margin: 40px 0 5px 25px;
+        margin-left: 25px;
     }
 
     section.right-align {
-        margin: 40px 25px 5px 0;
+        margin-right: 25px;
     }
 }
 
@@ -199,13 +201,13 @@ tbody tr:nth-child(odd) {
     section.left-align {
         text-align: center;
         width: 100%;
-        margin: 40px 0 5px 0;
+        margin-left: 0;
     }
 
     section.right-align {
         text-align: center;
         width: 100%;
-        margin: 0 0 5px 0;
+        margin: 0;
     }
 
     nav ul {
