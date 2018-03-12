@@ -154,12 +154,12 @@ tbody tr:nth-child(odd) {
   width: 10.5%;
 }
 
-.city, .state, .country {
+.city, .country {
   width: 10%;
 }
 
-.zip {
-  width: 6%;
+.state, .zip {
+  width: 8%;
 }
 
 .phone {
