@@ -11,6 +11,7 @@ Coding assignment instructions found [here](https://github.com/Distelli/ui-ux-ex
 
 ## UI Component Hierarchy
 Identified the components in the mock-up and broke them down into a hierarchy. Used as a reference when creating the React components.
+
 ![alt tag](https://i.imgur.com/IurMz5e.png "UI Component Hierarchy")
 
 ## Built With
