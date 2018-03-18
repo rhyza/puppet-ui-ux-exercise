@@ -9,6 +9,9 @@ Coding assignment instructions found [here](https://github.com/Distelli/ui-ux-ex
     * Table allows for horizontal scrolling for overflow on tablets and mobile phones.
     * Top navbar and filters stack and center on mobile phones.
 
+## UI Component Hierarchy
+![alt tag](https://i.imgur.com/IurMz5e.png "UI Component Hierarchy")
+
 ## Built With
 * [React](https://reactjs.org/)
 * No ready made components used.
